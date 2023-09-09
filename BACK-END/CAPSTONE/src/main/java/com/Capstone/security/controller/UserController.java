@@ -18,13 +18,13 @@ import com.Capstone.security.entity.User;
 import com.Capstone.security.service.UserService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/users")
 public class UserController {
 
 	 @Autowired
 	    private UserService userService;
 
-	 @GetMapping("/{id}")
+	 @GetMapping("{id}")
 	 public ResponseEntity<User> getUserById(@PathVariable Long id) {
 	      User user = userService.getById(id);
 	      return new ResponseEntity<>(user, HttpStatus.OK);
