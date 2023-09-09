@@ -1,0 +1,18 @@
+#register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../../../assets/registerimg.jpg');
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card {
+  width: 50%;
+  height: 90%;
+  border-radius: 5px;
+  background-color: lightgrey;
+  box-shadow: 0px 2px 15px 2px rgba(black, 0.68);
+}

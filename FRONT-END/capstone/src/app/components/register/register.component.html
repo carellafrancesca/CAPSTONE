@@ -1,1 +1,47 @@
-<p>register works!</p>
+<form id="register">
+  <div class="card p-4">
+    <form class="form-group">
+
+      <div class="mb-3">
+        <label for="Nome">Nome:</label>
+        <input class="form-control" type="text" placeholder="Inserisci il tuo nome" name="name">
+      </div>
+
+      <div class="mb-3">
+        <label for="Cognome">Cognome:</label>
+        <input class="form-control" type="text" placeholder="Inserisci il tuo cognome" name="surname">
+      </div>
+
+      <div class="mb-3">
+        <label for="Email">Username:</label>
+        <input class="form-control" type="username" placeholder="Inserisci il tuo username" name="username">
+      </div>
+
+      <div class="mb-3">
+        <label for="Email">Email:</label>
+        <input class="form-control" type="email" placeholder="Inserisci la tua email" name="email">
+      </div>
+
+      <div class="mb-3">
+        <label for="password">Password:</label>
+        <input class="form-control" type="password" placeholder="Inserisci la tua password" name="password">
+      </div>
+
+      <div class="mb-3">
+        <label for="password">Città:</label>
+        <input class="form-control" type="city" placeholder="Inserisci la tua città" name="city">
+      </div>
+
+      <div class="mb-3">
+        <label for="password">Età:</label>
+        <input class="form-control" type="number" placeholder="Inserisci la tua età" name="age">
+      </div>
+
+      <button id="registerB" class="btn btn-dark">Registrati</button>
+
+    </form>
+    <button class="btn btn-link text-dark" [routerLink]="['/']">Indietro</button>
+
+  </div>
+</form>
+
