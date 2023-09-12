@@ -1,4 +1,4 @@
 export const environment = {
-  register: "http://localhost:8080/api/auth/register",
-  login: "http://localhost:8080/api/auth/login"
+  urlRegister: "http://localhost:8080/api/auth/register",
+  urlLogin : "http://localhost:8080/api/auth/login"
 };
