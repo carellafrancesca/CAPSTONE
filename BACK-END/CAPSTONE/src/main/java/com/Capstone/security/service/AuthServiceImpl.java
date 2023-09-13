@@ -17,6 +17,7 @@ import com.Capstone.security.entity.User;
 import com.Capstone.security.exception.MyAPIException;
 import com.Capstone.security.payload.LoginDto;
 import com.Capstone.security.payload.RegisterDto;
+import com.Capstone.security.payload.RegisterResponse;
 import com.Capstone.security.repository.RoleRepository;
 import com.Capstone.security.repository.UserRepository;
 import com.Capstone.security.security.JwtTokenProvider;
@@ -60,7 +61,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public String register(RegisterDto registerDto) {
+    public RegisterResponse register(RegisterDto registerDto) {
 
         // add check for username exists in database
         if(userRepository.existsByUsername(registerDto.getUsername())){
@@ -97,7 +98,11 @@ public class AuthServiceImpl implements AuthService {
         System.out.println(user);
         userRepository.save(user);
 
-        return "User registered successfully!.";
+        return new RegisterResponse(
+                registerDto.getName(), 
+                registerDto.getUsername(), 
+                registerDto.getEmail(), 
+                "User registered successfully!.");
     }
     
     public ERole getRole(String role) {

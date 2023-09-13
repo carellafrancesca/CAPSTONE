@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 
@@ -10,30 +10,41 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class RegisterComponent implements OnInit{
 
-  @ViewChild('f') form!: NgForm;
-  error: undefined | string;
-  constructor(private authService: AuthService,private router: Router) { }
+  fG!:FormGroup;
+  registrationData: any = {};
+  errorMessage: string = '';
+
+  constructor(private authSvc:AuthService, private router:Router) { }
 
   ngOnInit(): void {
+    this.fG=new FormGroup({
+      name: new FormControl(""),
+      surname: new FormControl(""),
+      username: new FormControl("", Validators.required),
+      email: new FormControl("", Validators.required),
+      password: new FormControl("", Validators.required),
+      city: new FormControl(""),
+      age: new FormControl(""),
+    });
   }
 
-  onSubmit() {
-    if(  this.form.value.username.trim() !== ''
-      && this.form.value.email.trim() !== ''
-      && this.form.value.password.trim() !== '') {
-      this.authService.signup(this.form.value).subscribe(
-        resp => {
-          console.log(resp);
-          this.error = undefined;
-          this.router.navigate(['/login'])
-        }, err => {
-          console.log(err.error.message);
-          this.error = err.error.message;
-        }
-      );
-        } else {
-          this.error = 'Field Required';
+  submit(){
+    this.authSvc.register(this.fG.value).subscribe(res=>{
+      this.router.navigate(["/login"]);
+    });
+  }
+
+  register() {
+    this.authSvc.register(this.fG.value).subscribe(
+      (response) => {
+        console.log('Risposta dal server:', response);
+        this.router.navigate(['/login']);
+      },
+      (error) => {
+        console.error('Errore durante la registrazione:', error);
+        this.errorMessage = 'Errore durante la registrazione. Riprova più tardi.';
       }
-}
+    );
+  }
 
 }

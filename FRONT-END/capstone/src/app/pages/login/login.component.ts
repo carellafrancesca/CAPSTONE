@@ -19,7 +19,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if( this.form.value.username.trim() !== '' && this.form.value.password.trim() !== '') {
+
+    const username = this.form.value.username;
+    const password = this.form.value.password;
+
+    if (username && password && username.trim() !== '' && password.trim() !== ''){
         this.authService.signin(this.form.value).subscribe(
           resp => {
             console.log(resp);

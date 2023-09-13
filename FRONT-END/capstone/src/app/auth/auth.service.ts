@@ -2,6 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IRegisterData } from '../interfaces/iregister-data';
 import { ILoginData } from '../interfaces/ilogin-data';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environment/environment.development';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +20,8 @@ export class AuthService {
     return this.http.get<IRegisterData[]>('http://localhost:8080/api/test/angular');
   }
 
-  signup(user: IRegisterData) {
-    console.log(user);
-    return this.http.post('http://localhost:8080/api/auth/register', user);
+  register(user:IRegisterData) : Observable<any> {
+    return this.http.post(environment.urlRegister, user);
   }
 
   signin(user: ILoginData) {

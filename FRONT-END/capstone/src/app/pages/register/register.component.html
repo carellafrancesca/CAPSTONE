@@ -1,42 +1,42 @@
 <form id="register">
   <div class="card p-4">
-    <form class="form-group" #f="ngForm" (ngSubmit)="onSubmit()">
+    <form class="form-group" [formGroup]="fG" (ngSubmit)="register()">
       <div class="mb-3">
         <label for="Nome">Nome:</label>
-        <input class="form-control" type="text" placeholder="Inserisci il tuo nome" name="name">
+        <input class="form-control" type="text" placeholder="Inserisci il tuo nome" name="name" formControlName = 'name'>
       </div>
 
       <div class="mb-3">
         <label for="Cognome">Cognome:</label>
-        <input class="form-control" type="text" placeholder="Inserisci il tuo cognome" name="surname">
+        <input class="form-control" type="text" placeholder="Inserisci il tuo cognome" name="surname" formControlName = 'surname'>
       </div>
 
       <div class="mb-3">
         <label for="Email">Username:</label>
-        <input class="form-control" type="username" placeholder="Inserisci il tuo username" name="username">
+        <input class="form-control" type="username" placeholder="Inserisci il tuo username" name="username" formControlName = 'username'>
       </div>
 
       <div class="mb-3">
         <label for="Email">Email:</label>
-        <input class="form-control" type="email" placeholder="Inserisci la tua email" name="email">
+        <input class="form-control" type="email" placeholder="Inserisci la tua email" name="email" formControlName = 'email'>
       </div>
 
       <div class="mb-3">
         <label for="password">Password:</label>
-        <input class="form-control" type="password" placeholder="Inserisci la tua password" name="password">
+        <input class="form-control" type="password" placeholder="Inserisci la tua password" name="password" formControlName = 'password'>
       </div>
 
       <div class="mb-3">
-        <label for="password">Città:</label>
-        <input class="form-control" type="city" placeholder="Inserisci la tua città" name="city">
+        <label for="city">Città:</label>
+        <input class="form-control" type="city" placeholder="Inserisci la tua città" name="city" formControlName = 'city'>
       </div>
 
       <div class="mb-3">
-        <label for="password">Età:</label>
-        <input class="form-control" type="number" placeholder="Inserisci la tua età" name="age">
+        <label for="age">Età:</label>
+        <input class="form-control" type="number" placeholder="Inserisci la tua età" name="age" formControlName = 'age'>
       </div>
 
-      <button id="registerB" class="btn btn-dark">Registrati</button>
+      <button id="registerB" class="btn btn-dark" type="submit">Registrati</button>
 
     </form>
 
