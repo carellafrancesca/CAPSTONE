@@ -5,6 +5,6 @@ export interface IRegisterData {
     "email": string,
     "password": string,
     "city" : string,
-    "age" : number,
+    "age" : string,
     //"secretCode": string,
 }

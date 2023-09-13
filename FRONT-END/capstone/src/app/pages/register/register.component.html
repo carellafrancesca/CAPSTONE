@@ -1,7 +1,6 @@
 <form id="register">
   <div class="card p-4">
-    <form class="form-group">
-
+    <form class="form-group" #f="ngForm" (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <label for="Nome">Nome:</label>
         <input class="form-control" type="text" placeholder="Inserisci il tuo nome" name="name">
@@ -45,6 +44,3 @@
 
   </div>
 </form>
-
-<!--#f="ngForm" (ngSubmit)="onSubmit()"-->
-

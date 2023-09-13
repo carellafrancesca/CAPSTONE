@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+
 
 const routes: Routes = [
-  { path: 'homepage', loadChildren: () => import('./pages/homepage/homepage.module').then(m => m.HomepageModule) },
-  { path: 'loginpage', loadChildren: () => import('./pages/loginpage/loginpage.module').then(m => m.LoginpageModule) },
-  { path: 'registerpage', loadChildren: () => import('./pages/registerpage/registerpage.module').then(m => m.RegisterpageModule) },
-  { path: 'resultpage', loadChildren: () => import('./pages/homepage/resultpage/resultpage.module').then(m => m.ResultpageModule) },
-  { path: 'singleconcert', loadChildren: () => import('./pages/homepage/singleconcert/singleconcert.module').then(m => m.SingleconcertModule) },
-  { path: 'addpost', loadChildren: () => import('./pages/homepage/addpost/addpost.module').then(m => m.AddpostModule) },
+  {
+    path: "",
+    component: LoginComponent
+  },
+  {
+    path: "register",
+    component: RegisterComponent
+  }
 ];
 
 @NgModule({
