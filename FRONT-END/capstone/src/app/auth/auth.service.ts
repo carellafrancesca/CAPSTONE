@@ -24,9 +24,8 @@ export class AuthService {
     return this.http.post(environment.urlRegister, user);
   }
 
-  signin(user: ILoginData) {
-    console.log(user);
-    return this.http.post('http://localhost:8080/api/auth/login', user);
+  login(user:ILoginData) : Observable<any> {
+    return this.http.post(environment.urlLogin, user);
   }
 
   isAuth() {

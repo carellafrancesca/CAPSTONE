@@ -3,12 +3,12 @@
    <div class="card">
      <div class="card-body">
        <h5 class="card-title">Login</h5>
-        <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="f" (ngSubmit)="submit()">
               <label for="Username" class="p-1">Username:</label>
-              <input name="username" type="Username" class="form-control" id="Username" placeholder="Inserisci il tuo username" required>
+              <input name="username" type="Username" class="form-control" id="Username" placeholder="Inserisci il tuo username"  formControlName="username">
               <div class="form-group">
                 <label for="password" class="p-1">Password:</label>
-                <input type="password" name="password" class="form-control" id="password" placeholder="Inserisci la password" required>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Inserisci la password"  formControlName="password">
               </div>
               <button class="btn btn-dark mt-3" type="submit">Accedi</button>
         </form>
