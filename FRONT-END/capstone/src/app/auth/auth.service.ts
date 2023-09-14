@@ -1,9 +1,12 @@
+import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IRegisterData } from '../interfaces/iregister-data';
 import { ILoginData } from '../interfaces/ilogin-data';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environment/environment.development';
+import { IAuthData } from '../interfaces/iauth-data';
+import { IUser } from '../interfaces/iuser';
 
 
 @Injectable({
@@ -13,12 +16,9 @@ export class AuthService {
 
   loggedIn: boolean = false;
   headers = new HttpHeaders();
+  private authSubject = new BehaviorSubject<null | IAuthData>(null)
 
-  constructor(private http: HttpClient) { }
-
-  getUsers() {
-    return this.http.get<IRegisterData[]>('http://localhost:8080/api/test/angular');
-  }
+  constructor(private http: HttpClient, private router: Router) { }
 
   register(user:IRegisterData) : Observable<any> {
     return this.http.post(environment.urlRegister, user);
@@ -26,6 +26,12 @@ export class AuthService {
 
   login(user:ILoginData) : Observable<any> {
     return this.http.post(environment.urlLogin, user);
+  }
+
+  logout(){
+    localStorage.removeItem('user');
+    this.authSubject.next(null)
+    this.router.navigate(['/login']);
   }
 
   isAuth() {
