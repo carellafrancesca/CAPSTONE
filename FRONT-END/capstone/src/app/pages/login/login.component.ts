@@ -10,19 +10,32 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  f!:FormGroup;
+  @ViewChild('f') form!: NgForm;
+  error: undefined | string;
 
-  constructor(private authSvc:AuthService){}
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.f=new FormGroup({
-      username: new FormControl("", Validators.required),
-      password: new FormControl("", Validators.required)
-    });
   }
 
-  submit(){
-    this.authSvc.login(this.f.value);
+  submit() {
+    if( this.form.value.username.trim() !== '' && this.form.value.password.trim() !== '') {
+        this.authService.login(this.form.value).subscribe(
+          resp => {
+            console.log(resp);
+            this.error = undefined;
+            this.authService.loggedIn = true;
+            localStorage.setItem('userLogin', JSON.stringify(resp));
+            this.router.navigate(['/home'])
+          }, err => {
+            console.log(err.error.message);
+            this.error = err.error.message;
+          })
+        this.error = undefined;
+    } else {
+      this.error = 'Field Required';
+    }
+
   }
 
 }
