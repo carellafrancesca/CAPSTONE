@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { SingleconcertRoutingModule } from './singleconcert-routing.module';
 import { SingleconcertComponent } from './singleconcert.component';
-
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,9 @@ import { SingleconcertComponent } from './singleconcert.component';
   ],
   imports: [
     CommonModule,
-    SingleconcertRoutingModule
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule,
   ]
 })
 export class SingleconcertModule { }

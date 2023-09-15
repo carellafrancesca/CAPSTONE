@@ -9,27 +9,35 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { HomepageService } from './services/homepage.service';
 import { NgIf } from '@angular/common';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { RouterModule } from '@angular/router';
 import { HomepageModule } from './pages/homepage/homepage.module';
+import { ResultpageModule } from './pages/homepage/resultpage/resultpage.module';
+import { GuardGuard } from './auth/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HomepageModule,
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
     NgbCarouselModule,
-    NgIf
+    NgIf,
+    HttpClientModule,
+    RouterModule,
+    HomepageModule,
+    ResultpageModule
   ],
   providers: [
-    HomepageService
+    HomepageService,
+    GuardGuard
   ],
   bootstrap: [AppComponent]
 })

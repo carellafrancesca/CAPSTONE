@@ -1,1 +1,44 @@
-<p>resultpage works!</p>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a id="username" class="navbar-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle me-2" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+      </svg>
+    {{username}}</a>
+  <div id="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-music-note-list" viewBox="0 0 16 16">
+      <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
+      <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/>
+      <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/>
+      <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+    </svg>
+  </div>
+    <div id="button">
+      <button id="button" class="navbar-brand" (click)="logout()">Logout</button>
+    </div>
+    <div>
+      <button id="back" (click)="navigateToHome()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-return-left me-2" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- CARDS: CONCERTS -->
+<div>
+  <div class="card text-center mt-1" *ngFor="let concert of concerts">
+    <div class="card-body">
+      <h5 class="card-title">{{concert.concertName}}</h5>
+      <p class="card-text">{{concert.location.locationName}} - {{concert.location.locationCity}} - <strong>{{concert.eventDate}}</strong></p>
+      <a href="#" class="btn btn-dark" (click)="singlepage()">Details:</a>
+    </div>
+  </div>
+</div>
+
+
+
+
