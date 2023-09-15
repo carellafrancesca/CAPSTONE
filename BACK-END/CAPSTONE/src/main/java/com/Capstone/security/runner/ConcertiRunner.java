@@ -23,15 +23,15 @@ public class ConcertiRunner implements CommandLineRunner{
 		// LOCATION
 		/*
 		Location l1 = ls.create("Stadio S.Siro", "Milan");
-		Location l3 = ls.create("Fabrique", "Milan");
-		Location l5 = ls.create("Unipol Arena", "Bologna");
-		Location l7 = ls.create("Forum d'Assago", "Milan");
-		Location l8 = ls.create("Arena di Verona", "Verona");
-		Location l9 = ls.create("Ippodromo SNAI", "Milan");
-		Location l10 = ls.create("Visarno Arena", "Florence");
-		Location l11 = ls.create("Stadio Olimpico", "Rome");
-		Location l12 = ls.create("Orion Club", "Rome");
-		Location l14 = ls.create("Piazza Napoleone", "Lucca");
+		Location l2 = ls.create("Fabrique", "Milan");
+		Location l3 = ls.create("Unipol Arena", "Bologna");
+		Location l4 = ls.create("Forum d'Assago", "Milan");
+		Location l5 = ls.create("Arena di Verona", "Verona");
+		Location l6 = ls.create("Ippodromo SNAI", "Milan");
+		Location l7 = ls.create("Visarno Arena", "Florence");
+		Location l8 = ls.create("Stadio Olimpico", "Rome");
+		Location l9 = ls.create("Orion Club", "Rome");
+		Location l10 = ls.create("Piazza Napoleone", "Lucca");
 		*/
 		
 		// CONCERTS
@@ -56,6 +56,21 @@ public class ConcertiRunner implements CommandLineRunner{
 		Concert c18 = cs.create("Billie Eilish", LocalDate.of(2024, 11, 8), 4);
 		Concert c19 = cs.create("Idles", LocalDate.of(2024, 4, 21), 9);
 		Concert c20 = cs.create("Blur", LocalDate.of(2024, 7, 22), 10);
+		Concert c21 = cs.create("Imagine Dragons", LocalDate.of(2024, 3, 29), 8);
+		Concert c22 = cs.create("Doja Cat", LocalDate.of(2024, 12, 7), 3);
+		Concert c23 = cs.create("OneRepublic", LocalDate.of(2024, 5, 17), 10);
+		Concert c24 = cs.create("Mitski", LocalDate.of(2024, 2, 16), 9);
+		Concert c25 = cs.create("Post Malone", LocalDate.of(2024, 5, 1), 5);
+		Concert c26 = cs.create("5SOS", LocalDate.of(2024, 5, 16), 5);
+		Concert c27 = cs.create("Adele", LocalDate.of(2024, 10, 11), 3);
+		Concert c28 = cs.create("Bon Iver", LocalDate.of(2024, 5, 19), 9);
+		Concert c29 = cs.create("Depeche Mode", LocalDate.of(2024, 8, 13), 8);
+		Concert c30 = cs.create("Dua Lipa", LocalDate.of(2024, 5, 16), 3);
+		Concert c31 = cs.create("Franz Ferdinand", LocalDate.of(2024, 7, 30), 10);
+		Concert c32 = cs.create("Hozier", LocalDate.of(2024, 11, 30), 3);
+		Concert c33 = cs.create("Jorja Smith", LocalDate.of(2024, 11, 29), 9);
+		Concert c34 = cs.create("Lana del Rey", LocalDate.of(2024, 6, 30), 7);
+		Concert c35 = cs.create("Radiohead", LocalDate.of(2024, 6, 2), 7);
 		*/
 		
 		// UPDATE DI LOCATION E DATA

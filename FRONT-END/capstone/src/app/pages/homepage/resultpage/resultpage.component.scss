@@ -1,0 +1,18 @@
+#icon{
+  display: flex;
+}
+
+#button, #back{
+  background-color: #212529;
+  border: none;
+  button:hover{
+    color: gray;
+  }
+}
+
+.card{
+  background: rgb(140,197,224);
+  background: radial-gradient(circle, rgba(140,197,224,1) 0%, rgba(14,31,80,1) 80%);
+}
+
+

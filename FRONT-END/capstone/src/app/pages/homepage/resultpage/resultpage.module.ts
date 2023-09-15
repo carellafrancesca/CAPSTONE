@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ResultpageRoutingModule } from './resultpage-routing.module';
-import { ResultpageComponent } from './resultpage.component';
-
+import { SingleconcertModule } from '../singleconcert/singleconcert.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    ResultpageComponent
   ],
   imports: [
     CommonModule,
-    ResultpageRoutingModule
+    SingleconcertModule,
+    RouterModule
   ]
 })
 export class ResultpageModule { }
