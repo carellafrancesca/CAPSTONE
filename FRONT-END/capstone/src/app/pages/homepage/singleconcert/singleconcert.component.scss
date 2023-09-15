@@ -1,0 +1,11 @@
+#icon{
+  display: flex;
+}
+
+#button, #back{
+  background-color: #212529;
+  border: none;
+  button:hover{
+    color: gray;
+  }
+}
