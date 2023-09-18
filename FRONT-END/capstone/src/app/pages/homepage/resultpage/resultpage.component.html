@@ -32,9 +32,10 @@
 <div>
   <div class="card text-center mt-1" *ngFor="let concert of concerts">
     <div class="card-body">
-      <h5 class="card-title"><strong>{{concert.concertName}}</strong></h5>
-      <p class="card-text"> <strong>{{concert.location.locationName}} - {{concert.location.locationCity}} - {{concert.eventDate}}</strong></p>
-      <a class="btn btn-dark" (click)="singlepage()">Details:</a>
+      <h5 class="card-title">{{concert.concertName}}</h5>
+      <p class="card-text">{{concert.location.locationName}} - {{concert.location.locationCity}}</p>
+      <p class="card-text">{{concert.eventDate}}</p>
+      <a class="btn btn-dark" (click)="singlepage(concert.id)">Details:</a>
     </div>
   </div>
 </div>

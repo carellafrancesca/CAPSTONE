@@ -16,4 +16,15 @@ export class ConcertService {
     const url = this.baseUrl + 'byLocation/' + location;
     return this.http.get<IConcertData[]>(url);
   }
+
+  getConcertById(id: number): Observable<IConcertData> {
+    const url = this.baseUrl + id;
+    return this.http.get<IConcertData>(url);
+  }
+
+  getConcertDetails(id: number): Observable<IConcertData> {
+    const url = this.baseUrl + id;
+    return this.http.get<IConcertData>(url);
+  }
+
 }

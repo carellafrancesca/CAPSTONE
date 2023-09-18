@@ -38,8 +38,8 @@ export class ResultpageComponent implements OnInit{
     this.router.navigate(['/home']);
   }
 
-  singlepage() {
-    this.router.navigate(['/singleconcertpage']);
+  singlepage(id: number) {
+    this.router.navigate(['/singleconcertpage', id]);
   }
 
   loadConcertsByLocation() {

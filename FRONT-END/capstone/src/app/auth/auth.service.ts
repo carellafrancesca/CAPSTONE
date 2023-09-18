@@ -34,6 +34,17 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
+  getUsername(): string {
+    const user = localStorage.getItem('userLogin');
+      if (user) {
+        const userData = JSON.parse(user);
+        console.log(userData.username);
+        return userData.username;
+      } else {
+        return '';
+      }
+  }
+
   isAuth() {
     // return false;
     // return this.loggedIn;

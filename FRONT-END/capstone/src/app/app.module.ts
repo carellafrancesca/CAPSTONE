@@ -30,9 +30,7 @@ import { GuardGuard } from './auth/auth.guard';
     ReactiveFormsModule,
     NgbCarouselModule,
     NgIf,
-    HttpClientModule,
     RouterModule,
-    HomepageModule,
     ResultpageModule
   ],
   providers: [
