@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 
+import com.Capstone.security.entity.Comment;
 import com.Capstone.security.entity.Concert;
 import com.Capstone.security.entity.Location;
 
@@ -24,4 +25,9 @@ public class GestioneEventiConfig {
         return new Location();
     }
 	
+	@Bean("comment")
+    @Scope("prototype")
+    public Comment comment() {
+        return new Comment();
+    }
 }

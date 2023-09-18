@@ -1,5 +1,6 @@
 package com.Capstone.security.payload;
 
+import java.util.List;
 import java.util.Set;
 
 import lombok.AllArgsConstructor;
@@ -22,4 +23,5 @@ public class RegisterDto {
     private Integer age;
     private String city;
     private Set<String> roles;
+    private List<String> comments;
 }

@@ -8,6 +8,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Setter
@@ -44,5 +45,8 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
     private Set<Role> roles = new HashSet<>();
+    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Comment> comments;
 
 }
