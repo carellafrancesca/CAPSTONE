@@ -28,50 +28,61 @@
   </div>
 </nav>
 
-<!-- SINGLE PAGE CONCERT-->
-<div>
-  <div class="card text-center mt-2" *ngIf="concertDetails">
-    <div class="card-body">
-      <h5 class="card-title">{{concertDetails.concertName}}</h5>
-      <p class="card-text">{{concertDetails.location.locationName}} - {{concertDetails.location.locationCity}}</p>
-      <p class="card-text">{{concertDetails.eventDate}}</p>
+<div class="container">
+  <div class="row">
+
+    <!-- SINGLE CONCERT -->
+    <div class="col-md-6">
+      <div class="card mb-2">
+        <div class="card-body" *ngIf="concertDetails" id="singleConcert">
+            <h5 class="card-title">{{concertDetails.concertName}}</h5>
+            <p class="card-text">{{concertDetails.location.locationName}} - {{concertDetails.location.locationCity}}</p>
+            <p class="card-text">{{concertDetails.eventDate}}</p>
+        </div>
+      </div>
     </div>
+
+    <!-- POST FORM -->
+    <div class="col-md-6">
+      <div class="card mb-2">
+        <div class="card-body">
+          <form [formGroup]="commentForm" id="form">
+            <div class="form-group">
+              <label for="authorName" class="formInput">Utente loggato:</label>
+              <input type="text" id="authorName" formControlName="authorName" [readonly]="true" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="commentDate" class="formInput">Data di pubblicazione:</label>
+              <input type="date" id="commentDate" formControlName="commentDate" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="commentText" class="formInput">Testo del post:</label>
+              <textarea id="commentText" formControlName="commentText" class="form-control"></textarea>
+            </div>
+            <div id="send" class="d-flex justify-content-end align-items-end">
+              <button type="submit" class="btn btn-dark">Invia</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
+
+<!--<form [formGroup]="commentForm" (ngSubmit)="onSubmit()"></form>-->
 
 <!-- COMMENT SECTION -->
-<!--
-<div *ngIf="concertDetails">
-  <h4 class="mt-3 ms-2">Posts:</h4>
-  <div class="comment-list">
-    <div *ngFor="let comment of comments">
-      <p><strong>{{ comment.author }}</strong></p>
-      <p>{{ comment.commentText }}</p>
-      <p>{{ comment.commentDate }}</p>
-      <button *ngIf="comment.author === username" (click)="deleteComment(comment.id)">Delete</button>
+<div class="display: flex; flex-direction: column; align-items: flex-end;">
+  <div *ngIf="concertDetails">
+    <h4 class="mt-3 ms-2">Posts:</h4>
+    <div class="comment-list">
+      <div *ngFor="let comment of comments">
+        <p><strong>{{comment.author.username}}</strong></p>
+        <p>{{ comment.commentText }}</p>
+        <p>{{ comment.commentDate }}</p>
+        <button *ngIf="comment.author?.username === username">Delete</button>
+      </div>
     </div>
   </div>
-</div> -->
-
-<!-- Form per la creazione di un nuovo commento -->
-<!--
-<div>
-  <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="authorName">Utente loggato:</label>
-      <input type="text" id="authorName" formControlName="authorName" [value]="username" />
-    </div>
-    <div class="form-group">
-      <label for="commentDate">Data di pubblicazione</label>
-      <input type="date" id="commentDate" formControlName="commentDate" />
-    </div>
-    <div class="form-group">
-      <label for="commentText">Testo del commento o post:</label>
-      <textarea id="commentText" formControlName="commentText"></textarea>
-    </div>
-    <button type="submit" class="btn btn-dark">Invia</button>
-  </form>
 </div>
--->
-
-

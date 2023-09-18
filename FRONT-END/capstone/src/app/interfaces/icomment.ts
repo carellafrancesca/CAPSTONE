@@ -1,6 +1,8 @@
+import { IUser } from "./iuser";
+
 export interface Icomment {
   id: number;
-  "author" : string;
+  "author" : IUser;
   "commentText": string;
   "commentDate": Date;
   "eventId": number;

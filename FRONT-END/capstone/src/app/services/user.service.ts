@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { IUser } from '../interfaces/iuser';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
+  private baseUrl = 'http://localhost:8080/api/users/';
   constructor(private http: HttpClient) {}
   headers = new HttpHeaders();
 
@@ -42,5 +44,9 @@ export class UserService {
     }
   }
 
+  getUsernameById(userId: number) {
+    const url = this.baseUrl + userId + '/username';
+    return this.http.get<string>(url);
+  }
 
 }

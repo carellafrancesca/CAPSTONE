@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError } from 'rxjs';
 import { Icomment } from '../interfaces/icomment';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +10,17 @@ import { Icomment } from '../interfaces/icomment';
 export class CommentService {
 
   private baseUrl = 'http://localhost:8080/api/comments/';
+  accessToken : string = '';
+  comment!: Icomment;
 
   constructor(private http: HttpClient) {}
 
-  createComment(concertId: number, userId: number, commentText: string): Observable<Icomment> {
-    const url = this.baseUrl + 'concert/' + concertId + 'user/' + userId;
-    const requestBody = {
-      commentText: commentText
-    };
-    return this.http.post<Icomment>(url, requestBody);
+  postCommento(comment: Comment, accessToken: string): Observable<Comment> {
+    const headers = new HttpHeaders({Authorization: `Bearer ${accessToken}`});
+    const options = { headers: headers };
+    return this.http.post<Comment>(
+      `${this.baseUrl}`, comment, options
+    );
   }
 
   getCommentsByEventId(eventId: number): Observable<Icomment[]> {
