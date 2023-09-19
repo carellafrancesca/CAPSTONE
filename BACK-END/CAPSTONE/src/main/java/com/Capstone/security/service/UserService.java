@@ -1,5 +1,7 @@
 package com.Capstone.security.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,11 +32,21 @@ public class UserService {
 	    return RUserRepo.save(ru);
 	}
 	
+	public String getUsernameById(Long userId) {
+	    Optional<User> userOptional = RUserRepo.findById(userId);
+	    if (userOptional.isPresent()) {
+	        User user = userOptional.get();
+	        return user.getUsername();
+	    } else {
+	        throw new EntityNotFoundException("User not found with ID: " + userId);
+	    }
+	}
+    
 	public String delete(long id) {
 		if(!RUserRepo.existsById(id))
 			throw new EntityNotFoundException("User not found");
 		RUserRepo.deleteById(id);
 		return "User deleted successfully";
 	}
-	
+
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.Capstone.security.entity.Comment;
 import com.Capstone.security.entity.Concert;
@@ -12,18 +13,13 @@ import com.Capstone.security.entity.User;
 import com.Capstone.security.repository.CommentDAO;
 import com.Capstone.security.repository.ConcertDAO;
 
-@Component
+@Service
 public class CommentService {
 
 	@Autowired private CommentDAO commentRepo;
 	
-	public Comment createComment(User user, String commentText, Concert concert) {
-	    Comment newComment = new Comment();
-	    newComment.setCommentText(commentText);
-	    newComment.setCommentDate(LocalDate.now());
-	    newComment.setUser(user);
-	    newComment.setConcert(concert);
-	    return commentRepo.save(newComment);
+	public Comment createComment(Comment comment) {
+	    return commentRepo.save(comment);
 	}
 	
 	 public List<Comment> getAllCommentsByUser(User user) {

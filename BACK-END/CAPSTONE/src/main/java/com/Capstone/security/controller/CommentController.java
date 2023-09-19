@@ -30,27 +30,23 @@ public class CommentController {
 	@Autowired UserService userService;
 	@Autowired ConcertService concertSvc;
 	
-	@PostMapping("/concert/{concertId}/user/{userId}")
-	public ResponseEntity<Comment> createComment(
-	        @PathVariable Long concertId,
-	        @PathVariable Long userId,
-	        @RequestBody Comment comment) {
-	    User user = userService.getById(userId);
-	    Concert concert = concertSvc.findConcertById(concertId);
-	    Comment newComment = coms.createComment(user, comment.getCommentText(), concert);
-	    return new ResponseEntity<>(newComment, HttpStatus.CREATED);
+	@PostMapping
+	public ResponseEntity<String> createPost(@RequestBody Comment comment){
+		coms.createComment(comment);
+		return ResponseEntity.status(HttpStatus.CREATED).body("Post created successfully!");
 	}
 	
+	/*
 	@GetMapping("/user/{userId}")
-    public ResponseEntity<List<Comment>> getCommentsByUserId(@PathVariable long id) {
-		User user = userService.getById(id);
-        List<Comment> comments = coms.getAllCommentsByUser(user);
-        return new ResponseEntity<>(comments, HttpStatus.OK);
-    }
+	public ResponseEntity<List<Comment>> getCommentsByUserId(@PathVariable("userId") Long userId) {
+	    User user = userService.getById(userId);
+	    List<Comment> comments = coms.getAllCommentsByUser(user);
+	    return new ResponseEntity<>(comments, HttpStatus.OK);
+	}*/
 	
 	@GetMapping("/concert/{concertId}")
-	public ResponseEntity<List<Comment>> getCommentsByConcertId(@PathVariable long id) {
-	    List<Comment> comments = coms.getCommentsByConcertId(id);
+	public ResponseEntity<List<Comment>> getCommentsByConcertId(@PathVariable("concertId") Long concertId) {
+	    List<Comment> comments = coms.getCommentsByConcertId(concertId);
 	    return new ResponseEntity<>(comments, HttpStatus.OK);
 	}
 
