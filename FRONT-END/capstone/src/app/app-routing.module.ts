@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'resultpage/:location', component: ResultpageComponent },
   { path: 'singleconcertpage', component: SingleconcertComponent },
   { path: 'singleconcertpage/:id', component: SingleconcertComponent },
+  { path: 'concert/:id', component: SingleconcertComponent },
 ];
 
 @NgModule({

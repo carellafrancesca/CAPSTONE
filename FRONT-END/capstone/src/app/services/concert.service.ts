@@ -22,9 +22,4 @@ export class ConcertService {
     return this.http.get<IConcertData>(url);
   }
 
-  getConcertDetails(id: number): Observable<IConcertData> {
-    const url = this.baseUrl + id;
-    return this.http.get<IConcertData>(url);
-  }
-
 }

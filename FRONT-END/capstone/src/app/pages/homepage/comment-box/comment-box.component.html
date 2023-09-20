@@ -1,0 +1,23 @@
+<div class="col-md-6">
+  <div class="card mb-2">
+    <div class="card-body">
+      <form [formGroup]="commentForm" id="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="authorName" class="formInput">Utente loggato:</label>
+          <input type="text" id="authorName" formControlName="authorName" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="commentDate" class="formInput">Data di pubblicazione:</label>
+          <input type="date" id="commentDate" formControlName="commentDate" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="commentText" class="formInput">Testo del post:</label>
+          <textarea id="commentText" formControlName="commentText" class="form-control"></textarea>
+        </div>
+        <div id="send" class="d-flex justify-content-end align-items-end">
+          <button type="submit" class="btn btn-dark">Posta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+.card{
+  margin-top: 20px;
+  height: 350px;
+  background: rgb(185,221,238);
+  background: radial-gradient(circle, rgba(185,221,238,1) 0%, rgba(73,93,148,1) 100%);
+  #form{
+    margin-top: 20px;
+  }
+  #send{
+    margin-top: 30px;
+  }
+  .form-group{
+    margin-top: 10px;
+  }
+  .formInput{
+    font-weight: bold;
+  }
+}
