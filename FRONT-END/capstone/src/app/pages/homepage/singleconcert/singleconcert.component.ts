@@ -62,18 +62,19 @@ export class SingleconcertComponent implements OnInit {
     }
   }
 
-  /*deleteComment(commentId: number) {
+  deleteComment(commentId: number) {
     if (commentId) {
+      console.log('Deleting comment with ID:', commentId);
       this.commentSvc.deleteComment(commentId).subscribe(
         () => {
           this.comments = this.comments.filter(comment => comment.id !== commentId);
         },
         (error) => {
-          console.error('Error deleting comment:', error);
+          console.error('ERROR!', error);
         }
       );
     }
-  }*/
+  }
 
   logout(){
     this.authSvc.logout()
