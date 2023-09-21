@@ -1,5 +1,6 @@
 package com.Capstone.security.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.Capstone.security.entity.Comment;
@@ -30,10 +32,10 @@ public class CommentController {
 	@Autowired UserService userService;
 	@Autowired ConcertService concertSvc;
 	
-	@PostMapping
-	public ResponseEntity<String> createPost(@RequestBody Comment comment){
-		coms.createComment(comment);
-		return ResponseEntity.status(HttpStatus.CREATED).body("Post created successfully!");
+	@PostMapping("/post/{idConcert}")
+	public ResponseEntity<String> createPost(@RequestBody Comment comment, @PathVariable Long idConcert) {
+		 Comment com = coms.createComment(comment.getCommentText(),comment.getCommentDate(), comment.getUsernameAuthor(), idConcert);
+		 return ResponseEntity.status(HttpStatus.CREATED).body("Post created successfully!");
 	}
 	
 	/*

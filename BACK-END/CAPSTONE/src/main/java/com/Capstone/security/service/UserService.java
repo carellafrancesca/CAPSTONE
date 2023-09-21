@@ -41,6 +41,11 @@ public class UserService {
 	        throw new EntityNotFoundException("User not found with ID: " + userId);
 	    }
 	}
+	
+	public User getByUsername(String username) {
+		User us = RUserRepo.findByUsername(username);
+		return us;
+	}
     
 	public String delete(long id) {
 		if(!RUserRepo.existsById(id))

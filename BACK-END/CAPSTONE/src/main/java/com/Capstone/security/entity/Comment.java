@@ -13,13 +13,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name="Comments")
 public class Comment {
@@ -31,11 +32,8 @@ public class Comment {
 	protected String commentText;
 	@Column(nullable = false, columnDefinition = "DATE")
 	protected LocalDate commentDate;
-	
-	@ManyToOne
-    @JoinColumn(name = "user_id")
-	@JsonBackReference
-    private User user;
+	@Column(nullable = false)
+    private String usernameAuthor;
 	
 	@ManyToOne
     @JoinColumn(name = "concert_id")
