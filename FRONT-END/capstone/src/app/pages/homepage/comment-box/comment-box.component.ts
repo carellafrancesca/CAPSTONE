@@ -1,5 +1,8 @@
+import { ConcertService } from './../../../services/concert.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Icomment } from 'src/app/interfaces/icomment';
 import { CommentService } from 'src/app/services/comment.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -17,24 +20,33 @@ export class CommentBoxComponent implements OnInit{
 
   constructor(
     private commentService: CommentService,
-    private userService: UserService
+    private userService: UserService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.commentForm = new FormGroup({
-      authorName: new FormControl(this.userService.getUsername()),
+      usernameAuthor: new FormControl(),
       commentDate: new FormControl(),
       commentText: new FormControl(),
+    });
+    this.route.params.subscribe((params) => {
+      const eventId = +params['id'];
+      if (!isNaN(eventId)) {
+        this.eventId = eventId;
+      }
     });
   }
 
   onSubmit() {
-    const commentData = this.commentForm.value;
-    commentData.eventId = this.eventId;
     const token = this.userService.getToken();
-    console.log(commentData);
+    const com : Icomment = {};
+    com.commentDate = this.commentForm.value.commentDate;
+    com.commentText = this.commentForm.value.commentText;
+    com.usernameAuthor = this.commentForm.value.usernameAuthor;
+    //console.log(com);
 
-    this.commentService.sendComment(commentData, token).subscribe(
+    this.commentService.sendComment(com, token, this.eventId!).subscribe(
       (response) => {
         console.log('Commento inviato con successo:', response);
         this.loadComments();

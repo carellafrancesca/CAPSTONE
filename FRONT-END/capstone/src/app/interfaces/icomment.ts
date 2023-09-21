@@ -1,9 +1,9 @@
-import { IUser } from "./iuser";
+import { IConcertData } from "./iconcert-data";
 
 export interface Icomment {
   id?: number;
-  user : IUser;
-  commentText: string;
-  commentDate: Date;
-  eventId: number;
+  usernameAuthor?: string;
+  commentText?: string;
+  commentDate?: Date;
+  concert?: IConcertData;
 }

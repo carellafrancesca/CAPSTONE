@@ -34,13 +34,13 @@ export class UserService {
       }
   }
 
-  getUserId(): number | null {
+  getUserId(): number{
     const user = localStorage.getItem('userLogin');
     if (user) {
       const userData = JSON.parse(user);
       return userData.userId;
     } else {
-      return null;
+      return 0;
     }
   }
 

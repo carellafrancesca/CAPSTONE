@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
+import { Icomment } from 'src/app/interfaces/icomment';
 import { IConcertData } from 'src/app/interfaces/iconcert-data';
 import { CommentService } from 'src/app/services/comment.service';
 import { ConcertService } from 'src/app/services/concert.service';
@@ -15,7 +16,7 @@ export class SingleconcertComponent implements OnInit {
 
   username: string = '';
   concertDetails: IConcertData | undefined;
-  comments: any[] = [];
+  comments: Icomment[] = [];
   eventId: number | undefined;
 
   constructor(
@@ -60,6 +61,19 @@ export class SingleconcertComponent implements OnInit {
       );
     }
   }
+
+  /*deleteComment(commentId: number) {
+    if (commentId) {
+      this.commentSvc.deleteComment(commentId).subscribe(
+        () => {
+          this.comments = this.comments.filter(comment => comment.id !== commentId);
+        },
+        (error) => {
+          console.error('Error deleting comment:', error);
+        }
+      );
+    }
+  }*/
 
   logout(){
     this.authSvc.logout()
