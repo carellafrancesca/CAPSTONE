@@ -25,36 +25,36 @@ import jakarta.persistence.EntityNotFoundException;
 @RequestMapping("/api/users")
 public class UserController {
 
-	 @Autowired private UserService userService;
+	@Autowired private UserService userService;
 
-	 @GetMapping("{id}")
-	 public ResponseEntity<User> getUserById(@PathVariable Long id) {
-	      User user = userService.getById(id);
-	      return new ResponseEntity<>(user, HttpStatus.OK);
-	 }
+	@GetMapping("{id}")
+	public ResponseEntity<User> getUserById(@PathVariable Long id) {
+	    User user = userService.getById(id);
+	    return new ResponseEntity<>(user, HttpStatus.OK);
+	}
 	 
-	 @GetMapping("/{userId}/username")
-	 public ResponseEntity<String> getUsernameById(@PathVariable Long userId) {
-	     try {
-	         String username = userService.getUsernameById(userId);
-	         return ResponseEntity.ok(username);
-	     } catch (EntityNotFoundException ex) {
-	         return ResponseEntity.notFound().build();
-	     }
-	 }
+	@GetMapping("/{userId}/username")
+	public ResponseEntity<String> getUsernameById(@PathVariable Long userId) {
+	    try {
+	        String username = userService.getUsernameById(userId);
+	        return ResponseEntity.ok(username);
+	    } catch (EntityNotFoundException ex) {
+	        return ResponseEntity.notFound().build();
+	    }
+	}
 
-	 @PutMapping("/{id}")
-	 public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
-	      User user = userService.update(id, updatedUser);
-	      return new ResponseEntity<>(user, HttpStatus.OK);
-	 }
+	@PutMapping("/{id}")
+	public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
+	    User user = userService.update(id, updatedUser);
+	    return new ResponseEntity<>(user, HttpStatus.OK);
+	}
 
-	 @DeleteMapping("/{id}")
-	 @PreAuthorize("hasRole('ADMIN')")
-	 public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-	      userService.delete(id);
-	      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	 }
+	@DeleteMapping("/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+	    userService.delete(id);
+	    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
 	
 }
 	

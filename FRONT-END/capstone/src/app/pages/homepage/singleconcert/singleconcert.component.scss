@@ -13,13 +13,24 @@
 .card{
   margin-top: 20px;
   #singleConcert{
-    height: 350px;
-    background: rgb(185,221,238);
-    background: radial-gradient(circle, rgba(185,221,238,1) 0%, rgba(73,93,148,1) 100%);
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .date, .loc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+  .date .icon, .date p, .loc .icon, .loc p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
   }
   #form{
     margin-top: 20px;

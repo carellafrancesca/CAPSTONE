@@ -6,8 +6,6 @@ import { ILoginData } from '../interfaces/ilogin-data';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environment/environment.development';
 import { IAuthData } from '../interfaces/iauth-data';
-import { IUser } from '../interfaces/iuser';
-
 
 @Injectable({
   providedIn: 'root'
