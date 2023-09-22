@@ -11,8 +11,7 @@
 }
 
 .card{
-  background: rgb(80,94,162);
-  background: linear-gradient(0deg, rgba(80,94,162,1) 0%, rgba(0,12,36,1) 100%);
+  background-color: #9EA6B1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +26,7 @@
   }
   h3{
     font-weight: bold;
-    color: white;
+    color: black
   }
 }
 

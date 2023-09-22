@@ -5,7 +5,7 @@
 #button, #back{
   background-color: #212529;
   border: none;
-  button:hover{
+  button:hover {
     color: gray;
   }
 }
@@ -13,11 +13,16 @@
 .card{
   margin-top: 20px;
   #singleConcert{
-    height: 300px;
+    margin-top: 20px;
+    border-radius: 2%;
+    height: 370px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url(../../../../assets/ticket-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .date, .loc{
     display: flex;
@@ -31,6 +36,7 @@
     align-items: center;
     letter-spacing: 1px;
     margin-bottom: 10px;
+    padding: 5px;
   }
   #form{
     margin-top: 20px;
@@ -52,6 +58,22 @@
   }
   .formInput{
     font-weight: bold;
+  }
+}
+
+div.card.comment-card{
+  height: 400px;
+  overflow-y: auto;
+  border: none;
+  &::-webkit-scrollbar {
+    width: 9px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color:#41526C;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #2f3c4e;
   }
 }
 

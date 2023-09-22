@@ -22,7 +22,7 @@ export class SingleconcertComponent implements OnInit {
   constructor(
     private authSvc: AuthService, private userSvc: UserService,
     private route: ActivatedRoute, private concertSvc: ConcertService,
-    private commentSvc: CommentService
+    private commentSvc: CommentService, private router: Router
   ){
     this.username = this.userSvc.getUsername();
   }
@@ -36,6 +36,13 @@ export class SingleconcertComponent implements OnInit {
         this.loadComments();
       }
     });
+  }
+
+  goBackToResultsPage() {
+    if (this.concertDetails?.location?.locationCity) {
+      const locationCity = this.concertDetails.location.locationCity;
+      this.router.navigate(['/resultpage', locationCity]);
+    }
   }
 
   loadConcertDetails(eventId: number) {
