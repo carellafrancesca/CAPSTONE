@@ -39,8 +39,8 @@
       <button id="registerB" class="btn btn-dark" type="submit">Registrati</button>
 
     </form>
-
     <button class="btn btn-link text-dark" [routerLink]="['/']">Indietro</button>
-
   </div>
+
+  <div class="alert alert-danger my-3" role="alert" *ngIf="error"> {{error}}</div>
 </form>

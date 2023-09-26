@@ -60,12 +60,12 @@
     <div class="col-md-6">
       <!-- COMMENT SECTION -->
       <div class="card comment-card">
-        <div>
+        <div id="commentSection">
           <div *ngIf="concertDetails">
             <h4 class="mt-3 ms-2">Posts:</h4>
             <div class="comment-list">
               <div *ngFor="let comment of comments" class="card mb-3">
-                <div class="card-body" >
+                <div class="card-body">
                   <h5 class="card-title"><strong>@{{comment.usernameAuthor}}</strong> {{comment.commentDate}}</h5>
                   <p class="card-text">{{ comment.commentText }}</p>
                   <div id="commentButton">
