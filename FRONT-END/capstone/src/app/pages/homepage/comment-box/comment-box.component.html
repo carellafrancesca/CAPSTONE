@@ -3,7 +3,7 @@
     <div class="card-body">
       <form [formGroup]="commentForm" id="form" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="usernameAuthor" class="formInput">Utente loggato:</label>
+          <label for="usernameAuthor" class="formInput">Utente:</label>
           <input type="text" id="usernameAuthor" formControlName="usernameAuthor" class="form-control" />
         </div>
         <div class="form-group">
@@ -11,11 +11,11 @@
           <input type="date" id="commentDate" formControlName="commentDate" class="form-control" />
         </div>
         <div class="form-group">
-          <label for="commentText" class="formInput">Testo del post:</label>
+          <label for="commentText" class="formInput">Commento:</label>
           <textarea id="commentText" formControlName="commentText" class="form-control"></textarea>
         </div>
         <div id="send" class="d-flex justify-content-end align-items-end">
-          <button type="submit" class="btn btn-dark">Posta</button>
+          <button type="submit" class="btn" id="postButton">Posta</button>
         </div>
       </form>
     </div>
