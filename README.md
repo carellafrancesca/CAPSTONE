@@ -17,8 +17,7 @@ In base alla città ricercata, sarà possibile vedere tutti gli eventi presenti 
 - Installare i framework, le librerie e i linguaggi sovrastanti;
 - Creare un nuovo database su pgAdmin e collegarlo all' ![appro](https://img.shields.io/badge/application.properties-198753) del progetto Spring;
 - Nell'application properties impostare ![dacre](https://img.shields.io/badge/drop%20and%20create-198753);
-- Nel file AuthRunner rimuovere il commento al metodo setRoleDefault() per poi runnare il server;
-- Successivamente commentare nuovamente il metodo setRoleDefault() e nell'application properties, impostare il server con ![upd](https://img.shields.io/badge/update-198753);
+- Nel file AuthRunner runnare per una sola volta il metodo setRoleDefault() per poi ricommentarlo e impostare ![upd](https://img.shields.io/badge/update-198753) nell'application properties;
 - Nel file ConcertiRunner, runnare "locations" e "concerts" per poi commentarli nuovamente;
 - Su Visual Studio Code, runnare il comando ![ngso](https://img.shields.io/badge/ng%20s-198753) nel terminale della cartella "capstone";
 - Successivamente il browser dovrebbe aprirsi sul ![localhost](https://img.shields.io/badge/http://localhost:4200-198753);
