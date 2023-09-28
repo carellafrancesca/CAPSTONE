@@ -27,6 +27,6 @@ public class LocationService {
 			throw new EntityNotFoundException("Location not found.");
 		}
 		return locationRepo.findById(id).get();
-	 }
+	}
 	
 }
