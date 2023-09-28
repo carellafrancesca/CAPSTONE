@@ -33,7 +33,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="card border-0">
-        <div class="card-body" *ngIf="concertDetails" id="singleConcert">
+        <div class="card-body shadow p-3 rounded" *ngIf="concertDetails" id="singleConcert">
             <h5 class="card-title"><strong>{{concertDetails.concertName}}</strong></h5>
             <div class="loc">
               <div class="icon">
@@ -64,7 +64,7 @@
           <div *ngIf="concertDetails">
             <h4 class="mt-3 ms-2">Posts:</h4>
             <div class="comment-list">
-              <div *ngFor="let comment of comments" class="card mb-3">
+              <div *ngFor="let comment of comments" class="card mb-3 shadow p-3 rounded">
                 <div class="card-body">
                   <h5 class="card-title"><strong>@{{comment.usernameAuthor}}</strong> {{comment.commentDate}}</h5>
                   <p class="card-text">{{ comment.commentText }}</p>

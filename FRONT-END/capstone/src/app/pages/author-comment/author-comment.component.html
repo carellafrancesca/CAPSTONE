@@ -33,10 +33,10 @@
   <h3 class="my-3">I tuoi post:</h3>
   <div class="row">
     <div class="col-md-4" *ngFor="let comment of comments">
-      <div class="card mb-4 text-center">
+      <div class="card mb-4 text-center shadow p-3 mb-5 rounded">
         <div class="card-body">
           <h5 class="card-title">{{ comment.commentText }}</h5>
-          <button class="btn btn-dark" (click)="goToConcert(comment)">Evento:</button>
+          <button class="btn btn-dark mt-2" (click)="goToConcert(comment)">Evento:</button>
         </div>
         <div class="card-footer text-muted"><strong>Data:</strong> {{ comment.commentDate }}</div>
       </div>
