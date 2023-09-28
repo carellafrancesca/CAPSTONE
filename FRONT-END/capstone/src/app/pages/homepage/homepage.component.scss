@@ -34,3 +34,15 @@
   color: white;
   text-decoration: none;
 }
+
+.horizontal-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  }
+}
