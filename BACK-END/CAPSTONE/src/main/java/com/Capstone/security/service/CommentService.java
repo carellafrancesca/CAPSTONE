@@ -34,12 +34,16 @@ public class CommentService {
 		return com;
 	}
 	 
-	public List<Comment> getCommentsByConcertId(long id) {
-	    return commentRepo.findByConcertId(id);
-	}
+	 public List<Comment> getCommentsByConcertId(long id) {
+	        return commentRepo.findByConcertId(id);
+	 }
 	 
-	public void deleteCommentById(long id) {
-	    commentRepo.deleteById(id);
-	}
+	 public List<Comment> getCommentsByUsernameAuthor(String usernameAuthor) {
+	        return commentRepo.findByUsernameAuthor(usernameAuthor);
+	 }
+	 
+	 public void deleteCommentById(long id) {
+	        commentRepo.deleteById(id);
+	 }
 	
 }

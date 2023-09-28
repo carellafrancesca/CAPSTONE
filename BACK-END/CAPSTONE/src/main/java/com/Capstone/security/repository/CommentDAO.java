@@ -10,5 +10,7 @@ import com.Capstone.security.entity.User;
 public interface CommentDAO extends CrudRepository<Comment, Long>{
 	
 	List<Comment> findByConcertId(long id);
+
+	List<Comment> findByUsernameAuthor(String usernameAuthor);
 		
 }

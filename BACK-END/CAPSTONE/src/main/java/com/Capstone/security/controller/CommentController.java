@@ -38,13 +38,11 @@ public class CommentController {
 		 return ResponseEntity.status(HttpStatus.CREATED).body("Post created successfully!");
 	}
 	
-	/*
-	@GetMapping("/user/{userId}")
-	public ResponseEntity<List<Comment>> getCommentsByUserId(@PathVariable("userId") Long userId) {
-	    User user = userService.getById(userId);
-	    List<Comment> comments = coms.getAllCommentsByUser(user);
-	    return new ResponseEntity<>(comments, HttpStatus.OK);
-	}*/
+    @GetMapping("/user/{usernameAuthor}")
+    public ResponseEntity<List<Comment>> getCommentsByUsernameAuthor(@PathVariable String usernameAuthor) {
+        List<Comment> comments = coms.getCommentsByUsernameAuthor(usernameAuthor);
+        return new ResponseEntity<>(comments, HttpStatus.OK);
+    }
 	
 	@GetMapping("/concert/{concertId}")
 	public ResponseEntity<List<Comment>> getCommentsByConcertId(@PathVariable("concertId") Long concertId) {
