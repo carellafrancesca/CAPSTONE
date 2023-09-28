@@ -1,0 +1,39 @@
+#icon{
+  display: flex;
+}
+
+#button, #back{
+  background-color: #212529;
+  border: none;
+  button:hover {
+    color: gray;
+  }
+}
+
+.card-body{
+  height: 120px;
+}
+
+#link{
+  color: white;
+  text-decoration: none;
+}
+
+.fixed-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.horizontal-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  }
+}

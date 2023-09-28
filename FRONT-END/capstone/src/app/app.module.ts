@@ -14,12 +14,14 @@ import { RouterModule } from '@angular/router';
 import { HomepageModule } from './pages/homepage/homepage.module';
 import { ResultpageModule } from './pages/homepage/resultpage/resultpage.module';
 import { GuardGuard } from './auth/auth.guard';
+import { AuthorCommentComponent } from './pages/author-comment/author-comment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    AuthorCommentComponent,
   ],
   imports: [
     BrowserModule,

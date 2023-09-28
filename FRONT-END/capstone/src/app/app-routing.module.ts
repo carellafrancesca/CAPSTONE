@@ -5,6 +5,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ResultpageComponent } from './pages/homepage/resultpage/resultpage.component';
 import { SingleconcertComponent } from './pages/homepage/singleconcert/singleconcert.component';
+import { AuthorCommentComponent } from './pages/author-comment/author-comment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'singleconcertpage', component: SingleconcertComponent },
   { path: 'singleconcertpage/:id', component: SingleconcertComponent },
   { path: 'concert/:id', component: SingleconcertComponent },
+  { path: 'authorComment', component: AuthorCommentComponent}
 ];
 
 @NgModule({

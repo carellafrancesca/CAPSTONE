@@ -27,6 +27,11 @@ export class CommentService {
     return this.http.get<Icomment[]>(url);
   }
 
+  getCommentsByUsername(usernameAuthor: string): Observable<Icomment[]> {
+    const url = this.baseUrl + '/user/' + usernameAuthor;
+    return this.http.get<Icomment[]>(url);
+  }
+
   deleteComment(commentId: number){
     const url = this.baseUrl + '/' + commentId;
     return this.http.delete<void>(url);

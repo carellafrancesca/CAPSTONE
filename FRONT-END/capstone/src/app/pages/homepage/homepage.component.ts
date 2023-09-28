@@ -33,6 +33,10 @@ export class HomepageComponent implements OnInit{
     }
   }
 
+  yourPost(){
+    this.router.navigate(['/authorComment']);
+  }
+
   logout(){
     this.authSvc.logout()
   }
