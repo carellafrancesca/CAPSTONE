@@ -19,7 +19,7 @@ In base alla città ricercata, sarà possibile vedere tutti gli eventi presenti 
 - Nell'application properties impostare ![dacre](https://img.shields.io/badge/drop%20and%20create-198753);
 - Nel file AuthRunner runnare per una sola volta il metodo setRoleDefault() per poi ricommentarlo e impostare ![upd](https://img.shields.io/badge/update-198753) nell'application properties;
 - Nel file ConcertiRunner, runnare "locations" e "concerts" per poi commentarli nuovamente;
-- Su Visual Studio Code, runnare il comando ![ngso](https://img.shields.io/badge/ng%20s-198753) nel terminale della cartella "capstone";
+- Su Visual Studio Code, runnare il comando ![Static Badge](https://img.shields.io/badge/ng%20s%20-o?logoColor=198753) nel terminale della cartella "capstone";
 - Successivamente il browser dovrebbe aprirsi sul ![localhost](https://img.shields.io/badge/http://localhost:4200-198753);
 - Per accedere a tutte le funzionalità, effettuare il la registrazione e successivamente il login;
 - EXTRA: *Per la creazione di un post, basterà lasciare un commento nella sezione dell'evento specifico, postarlo e aggiornare il browser e il database. Dopo aver svolto questi passaggi, il post creato verrà mostrato assieme agli altri commenti*;
