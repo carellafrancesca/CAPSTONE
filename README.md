@@ -12,6 +12,7 @@ In base alla città ricercata, sarà possibile vedere tutti gli eventi presenti 
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
+![SpringSecurity](https://img.shields.io/badge/springsecurity-%6DB33F?style=for-the-badge&logo=Hibernate&logoColor=white)
 
 # How to use
 - Installare i framework, le librerie e i linguaggi sovrastanti;
@@ -23,3 +24,13 @@ In base alla città ricercata, sarà possibile vedere tutti gli eventi presenti 
 - Successivamente il browser dovrebbe aprirsi sul ![localhost](https://img.shields.io/badge/http://localhost:4200-198753);
 - Per accedere a tutte le funzionalità, effettuare il la registrazione e successivamente il login;
 - EXTRA: *Per la creazione di un post, basterà lasciare un commento nella sezione dell'evento specifico, postarlo e aggiornare il browser e il database. Dopo aver svolto questi passaggi, il post creato verrà mostrato assieme agli altri commenti*;
+
+# Project
+
+[Img 1](./FRONT-END/capstone/src/assets/Screenshot%20(197).png)
+[Img 2](./FRONT-END/capstone/src/assets/Screenshot%20(198).png)
+[Img 3](./FRONT-END/capstone/src/assets/Screenshot%20(199).png)
+[Img 4](./FRONT-END/capstone/src/assets/Screenshot%20(200).png)
+[Img 5](./FRONT-END/capstone/src/assets/Screenshot%20(201).png)
+[Img 6](./FRONT-END/capstone/src/assets/Screenshot%20(202).png)
+[Img 7](./FRONT-END/capstone/src/assets/Screenshot%20(203).png)
