@@ -12,6 +12,7 @@ In base alla città ricercata, sarà possibile vedere tutti gli eventi presenti 
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
+![SpringSecurity](https://img.shields.io/badge/springsecurity-%6DB33F?style=for-the-badge&logo=Hibernate&logoColor=white)
 
 # How to use
 - Installare i framework, le librerie e i linguaggi sovrastanti;
