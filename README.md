@@ -29,3 +29,8 @@ In base alla città ricercata, sarà possibile vedere tutti gli eventi presenti 
 
 [Img 1](./FRONT-END/capstone/src/assets/Screenshot%20(197).png)
 [Img 2](./FRONT-END/capstone/src/assets/Screenshot%20(198).png)
+[Img 3](./FRONT-END/capstone/src/assets/Screenshot%20(199).png)
+[Img 4](./FRONT-END/capstone/src/assets/Screenshot%20(200).png)
+[Img 5](./FRONT-END/capstone/src/assets/Screenshot%20(201).png)
+[Img 6](./FRONT-END/capstone/src/assets/Screenshot%20(202).png)
+[Img 7](./FRONT-END/capstone/src/assets/Screenshot%20(203).png)
